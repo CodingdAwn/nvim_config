@@ -42,6 +42,7 @@ vim.keymap.set('n', '<leader>nt', '<cmd>NvimTreeToggle<CR>')
 vim.keymap.set('n', '<leader>nf', '<cmd>NvimTreeFindFile<CR>')
 vim.keymap.set('n', '<leader>nr', '<cmd>NvimTreeRefresh<CR>')
 
+--[[
 require'nvim-web-devicons'.setup {
  -- globally enable different highlight colors per icon (default to true)
  -- if set to false all icons will have the default icon's color
@@ -50,3 +51,4 @@ require'nvim-web-devicons'.setup {
  -- will get overriden by `get_icons` option
  default = true;
 }
+--]]

@@ -15,4 +15,16 @@ return function(use)
 
   -- wiki
   use 'vimwiki/vimwiki'
+
+  -- 配对括号和引号自动补全
+  use 'Raimondi/delimitMate'
+
+  -- indentLine 显示tab那些缩进的线
+  use 'Yggdroot/indentLine'
+
+  -- 显示搜索的索引 以及搜索到的总个数
+  use 'google/vim-searchindex'
+
+  -- color schme
+  use 'ellisonleao/gruvbox.nvim'
 end

@@ -24,10 +24,17 @@ vim.keymap.set('n', '<leader>k', '<c-w>k', { desc = 'move windows' })
 
 -- change work dir to git root
 local function cwd_git_root()
+  vim.api.nvim_command('cd %:p:h')
   local git_root_path =
   require("plenary.job"):new({ command = "git", args = { "rev-parse", "--show-toplevel" } }):sync()[1]
   vim.fn.chdir(git_root_path)
   print('current cwd is ' .. git_root_path)
 end
-
 vim.keymap.set('n', '<a-r>', cwd_git_root, { desc = 'cwd to git root' })
+
+-- 直接打开neovim config init.lua 并且设置好cwd dir
+local function home_neovim_config()
+  vim.api.nvim_command('e ~/.config/nvim/init.lua')
+  cwd_git_root()
+end
+vim.keymap.set('n', '<leader>cof', home_neovim_config, { desc = 'open neovim config init.lua' })

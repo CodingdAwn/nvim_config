@@ -4,10 +4,10 @@ vim.opt.relativenumber = true
 
 -- 高亮选中
 vim.opt.hlsearch = true
+vim.cmd('hi Search cterm=reverse guifg=#282c34 guibg=#d19a66')
 
 -- 自动缩进
 vim.opt.autoindent = true
-
 -- 打开 C/C++ 语言缩进优化
 vim.opt.cindent = true
 
@@ -34,16 +34,16 @@ end
 vim.opt.tags="./.tags;,.tags"
 
 -- 设置缩进宽度
-vim.opt.sw=2
+vim.opt.sw=4
 
 -- 设置 TAB 宽度
-vim.opt.ts=2
+vim.opt.ts=4
 
 -- 使用空格代替tab
 vim.opt.expandtab=true
 
 -- 如果后面设置了 expandtab 那么展开 tab 为多少字符
-vim.opt.softtabstop=2
+vim.opt.softtabstop=4
 
 vim.api.nvim_create_autocmd('BufRead', {
   desc = 'set python tab config',
@@ -56,3 +56,7 @@ vim.api.nvim_create_autocmd('BufRead', {
     end
   end,
 })
+
+-- color schme
+--vim.o.background = "dark" -- or "light" for light mode
+--vim.cmd([[colorscheme gruvbox]])
