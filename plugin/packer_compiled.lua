@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/home/dawn/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  delimitMate = {
+    loaded = true,
+    path = "/home/dawn/.local/share/nvim/site/pack/packer/start/delimitMate",
+    url = "https://github.com/Raimondi/delimitMate"
+  },
   ["fidget.nvim"] = {
     loaded = true,
     path = "/home/dawn/.local/share/nvim/site/pack/packer/start/fidget.nvim",
@@ -104,15 +109,30 @@ _G.packer_plugins = {
     path = "/home/dawn/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/home/dawn/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/dawn/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  indentLine = {
+    loaded = true,
+    path = "/home/dawn/.local/share/nvim/site/pack/packer/start/indentLine",
+    url = "https://github.com/Yggdroot/indentLine"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/dawn/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/home/dawn/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -138,6 +158,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/dawn/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/dawn/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -189,10 +214,20 @@ _G.packer_plugins = {
     path = "/home/dawn/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
     url = "https://github.com/tpope/vim-rhubarb"
   },
+  ["vim-searchindex"] = {
+    loaded = true,
+    path = "/home/dawn/.local/share/nvim/site/pack/packer/start/vim-searchindex",
+    url = "https://github.com/google/vim-searchindex"
+  },
   ["vim-sleuth"] = {
     loaded = true,
     path = "/home/dawn/.local/share/nvim/site/pack/packer/start/vim-sleuth",
     url = "https://github.com/tpope/vim-sleuth"
+  },
+  ["vim-translator"] = {
+    loaded = true,
+    path = "/home/dawn/.local/share/nvim/site/pack/packer/start/vim-translator",
+    url = "https://github.com/CodingdAwn/vim-translator"
   }
 }
 

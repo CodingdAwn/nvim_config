@@ -20,6 +20,10 @@ vim.opt.swapfile = false
 -- 禁用 undo文件
 vim.opt.undofile = false
 
+vim.opt.compatible = false
+vim.cmd('filetype plugin on')
+vim.cmd('syntax on')
+
 if vim.fn.has('multi_byte') == 1 then
   -- 内部工作编码
   vim.opt.encoding="utf-8"

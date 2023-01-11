@@ -38,3 +38,14 @@ local function home_neovim_config()
   cwd_git_root()
 end
 vim.keymap.set('n', '<leader>cof', home_neovim_config, { desc = 'open neovim config init.lua' })
+
+-- Use K to show documentation in preview window
+local function show_docs()
+    local cw = vim.fn.expand('<cword>')
+    if vim.fn.index({'vim', 'help'}, vim.bo.filetype) >= 0 then
+        vim.api.nvim_command('h ' .. cw)
+    else
+        vim.lsp.buf.hover()
+    end
+end
+vim.keymap.set("n", "K", show_docs, { desc = 'Hover Documentation', silent = true })

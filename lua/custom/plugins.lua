@@ -15,6 +15,8 @@ return function(use)
 
   -- wiki
   use 'vimwiki/vimwiki'
+  vim.cmd("let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]")
+  vim.cmd("let g:vimwiki_global_ext = 0")
 
   -- 配对括号和引号自动补全
   use 'Raimondi/delimitMate'
@@ -25,6 +27,6 @@ return function(use)
   -- 显示搜索的索引 以及搜索到的总个数
   use 'google/vim-searchindex'
 
-  -- color schme
+  -- color schme, some lanuage's treesitter does not look good, like c++, so just use one-dark default
   use 'ellisonleao/gruvbox.nvim'
 end
