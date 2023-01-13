@@ -21,10 +21,10 @@ return function(use)
   --use 'Raimondi/delimitMate'
 
   -- 显示搜索的索引 以及搜索到的总个数
-  use 'google/vim-searchindex'
+  use { 'google/vim-searchindex' }
 
   -- 图标
-  use "kyazdani42/nvim-web-devicons"
+  use { "kyazdani42/nvim-web-devicons" }
 
   -- cmp的补充
   use { "hrsh7th/cmp-nvim-lua" }
