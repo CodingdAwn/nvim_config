@@ -1,3 +1,4 @@
+-- TODO vim.cmd的命令 在没有安装插件的情况下会报错 优化下体验
 -- 加载自己的插件
 return function(use)
   -- translator plugins
@@ -46,4 +47,7 @@ return function(use)
 
   -- a better git diff, merge plugin
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
+  --use {"olimorris/onedarkpro.nvim"}
+  --vim.cmd("colorscheme onedark")
 end
