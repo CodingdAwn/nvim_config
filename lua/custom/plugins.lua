@@ -41,5 +41,9 @@ return function(use)
 
   use { "tpope/vim-surround" }
 
+  -- like delimitMate
   use { 'jiangmiao/auto-pairs' }
+
+  -- a better git diff, merge plugin
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 end
