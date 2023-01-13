@@ -22,6 +22,11 @@ vim.keymap.set('n', '<leader>l', '<c-w>l', { desc = 'move windows' })
 vim.keymap.set('n', '<leader>j', '<c-w>j', { desc = 'move windows' })
 vim.keymap.set('n', '<leader>k', '<c-w>k', { desc = 'move windows' })
 
+vim.keymap.set('i', '<c-h>', '<left>', { desc = 'move windows' })
+vim.keymap.set('i', '<c-l>', '<right>', { desc = 'move windows' })
+vim.keymap.set('i', '<c-j>', '<down>', { desc = 'move windows' })
+vim.keymap.set('i', '<c-k>', '<up>', { desc = 'move windows' })
+
 -- change work dir to git root
 local function cwd_git_root()
   vim.api.nvim_command('cd %:p:h')

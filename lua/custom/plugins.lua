@@ -2,7 +2,6 @@
 return function(use)
   -- translator plugins
   use "CodingdAwn/vim-translator"
-
   -- markdown preview plugins
   use({
     "iamcco/markdown-preview.nvim",
@@ -19,14 +18,28 @@ return function(use)
   vim.cmd("let g:vimwiki_global_ext = 0")
 
   -- 配对括号和引号自动补全
-  use 'Raimondi/delimitMate'
-
-  -- indentLine 显示tab那些缩进的线
-  use 'Yggdroot/indentLine'
+  --use 'Raimondi/delimitMate'
 
   -- 显示搜索的索引 以及搜索到的总个数
   use 'google/vim-searchindex'
 
-  -- color schme, some lanuage's treesitter does not look good, like c++, so just use one-dark default
-  use 'ellisonleao/gruvbox.nvim'
+  -- 图标
+  use "kyazdani42/nvim-web-devicons"
+
+  -- cmp的补充
+  use { "hrsh7th/cmp-nvim-lua" }
+  use { "hrsh7th/cmp-buffer" }
+  use { "hrsh7th/cmp-path" }
+
+  -- 更多的色彩
+  use { 'norcalli/nvim-colorizer.lua', config = function()
+    require("colorizer").setup {}
+  end }
+
+  -- terminal
+  use { "akinsho/toggleterm.nvim" }
+
+  use { "tpope/vim-surround" }
+
+  use { 'jiangmiao/auto-pairs' }
 end

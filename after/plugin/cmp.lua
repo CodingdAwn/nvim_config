@@ -1,0 +1,9 @@
+local cmp = require 'cmp'
+
+cmp.config.sources = {
+    { name = "buffer" },
+    { name = "nvim_lua" },
+    { name = "path" },
+}
+
+vim.keymap.set('n', '<leader>fm', vim.lsp.buf.format, { desc = 'Format current buffer' })
