@@ -29,28 +29,32 @@ vim.keymap.set('i', '<c-k>', '<up>', { desc = 'move windows' })
 
 -- change work dir to git root
 local function cwd_git_root()
-  vim.api.nvim_command('cd %:p:h')
-  local git_root_path =
-  require("plenary.job"):new({ command = "git", args = { "rev-parse", "--show-toplevel" } }):sync()[1]
-  vim.fn.chdir(git_root_path)
-  print('current cwd is ' .. git_root_path)
+    vim.api.nvim_command('cd %:p:h')
+    local git_root_path =
+    require("plenary.job"):new({ command = "git", args = { "rev-parse", "--show-toplevel" } }):sync()[1]
+    vim.fn.chdir(git_root_path)
+    print('current cwd is ' .. git_root_path)
 end
+
 vim.keymap.set('n', '<a-r>', cwd_git_root, { desc = 'cwd to git root' })
 
 -- 直接打开neovim config init.lua 并且设置好cwd dir
 local function home_neovim_config()
-  vim.api.nvim_command('e ~/.config/nvim/init.lua')
-  cwd_git_root()
+    vim.api.nvim_command('e ~/.config/nvim/init.lua')
+    cwd_git_root()
 end
+
 vim.keymap.set('n', '<leader>cof', home_neovim_config, { desc = 'open neovim config init.lua' })
 
 -- Use K to show documentation in preview window
 local function show_docs()
     local cw = vim.fn.expand('<cword>')
-    if vim.fn.index({'vim', 'help'}, vim.bo.filetype) >= 0 then
+    if vim.fn.index({ 'vim', 'help' }, vim.bo.filetype) >= 0 then
         vim.api.nvim_command('h ' .. cw)
     else
         vim.lsp.buf.hover()
     end
 end
+
 vim.keymap.set("n", "K", show_docs, { desc = 'Hover Documentation', silent = true })
+vim.keymap.set('n', '<leader>cd', '<cmd>cd %:p:h', { desc = 'cwd with current buff' })
