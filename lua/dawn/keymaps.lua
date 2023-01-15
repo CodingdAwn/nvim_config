@@ -57,4 +57,7 @@ local function show_docs()
 end
 
 vim.keymap.set("n", "K", show_docs, { desc = 'Hover Documentation', silent = true })
-vim.keymap.set('n', '<leader>cd', '<cmd>cd %:p:h', { desc = 'cwd with current buff' })
+vim.keymap.set('n', '<leader>cd', function ()
+    vim.api.nvim_command('cd %:p:h')
+    vim.api.nvim_command('pwd')
+end, { desc = 'cwd with current buff' })

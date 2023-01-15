@@ -12,6 +12,7 @@ require("nvim-tree").setup({
     mappings = {
       list = {
         { key = "u", action = "dir_up" },
+        { key = "cd", action = "cd" },
       },
     },
   },
@@ -21,6 +22,7 @@ require("nvim-tree").setup({
   filters = {
     dotfiles = true,
   },
+  sync_root_with_cwd = true,
 })
 
 vim.keymap.set('n', '<leader>no', '<cmd>NvimTreeFocus<CR>')
