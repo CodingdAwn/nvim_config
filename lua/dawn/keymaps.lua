@@ -61,3 +61,11 @@ vim.keymap.set('n', '<leader>cd', function ()
     vim.api.nvim_command('cd %:p:h')
     vim.api.nvim_command('pwd')
 end, { desc = 'cwd with current buff' })
+----------------------------------------------------------------------
+-- 在当前光标下输出时间
+----------------------------------------------------------------------
+vim.keymap.set("n", "<leader>da", function ()
+    local date_string = vim.fn.strftime('%Y-%m-%d')
+    local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+    vim.api.nvim_buf_set_text(0, row - 1, col, row - 1, col, {date_string})
+end, { desc = 'Put current date at cursor pos', silent = true })
