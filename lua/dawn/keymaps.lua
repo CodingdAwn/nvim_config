@@ -27,6 +27,12 @@ vim.keymap.set('i', '<c-l>', '<right>', { desc = 'move windows' })
 vim.keymap.set('i', '<c-j>', '<down>', { desc = 'move windows' })
 vim.keymap.set('i', '<c-k>', '<up>', { desc = 'move windows' })
 
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'diagnostic prev' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'diagnostic next' })
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'diagnostic open open_float' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'diagnostic setloclist' })
+
 -- change work dir to git root
 local function cwd_git_root()
     vim.api.nvim_command('cd %:p:h')
@@ -61,6 +67,7 @@ vim.keymap.set('n', '<leader>cd', function ()
     vim.api.nvim_command('cd %:p:h')
     vim.api.nvim_command('pwd')
 end, { desc = 'cwd with current buff' })
+
 ----------------------------------------------------------------------
 -- 在当前光标下输出时间
 ----------------------------------------------------------------------
@@ -69,3 +76,4 @@ vim.keymap.set("n", "<leader>da", function ()
     local row, col = unpack(vim.api.nvim_win_get_cursor(0))
     vim.api.nvim_buf_set_text(0, row - 1, col, row - 1, col, {date_string})
 end, { desc = 'Put current date at cursor pos', silent = true })
+

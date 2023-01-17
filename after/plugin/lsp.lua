@@ -5,6 +5,7 @@ vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = '[G]oto [I]mpleme
 vim.keymap.set('n', '<leader>td', vim.lsp.buf.type_definition, { desc = 'Type [D]efinition' })
 
 local function on_attach(client, bufnr)
+  print('load mono')
   client.server_capabilities.semanticTokensProvider = {
     full = vim.empty_dict(),
     legend = {
@@ -77,10 +78,6 @@ local function on_attach(client, bufnr)
         "regex_other_escape",
       },
     },
-    --[[
-    useModernNet = true,
-    useGlobalMono = true,
-    --]]
     range = true,
   }
 
@@ -121,10 +118,12 @@ local function on_attach(client, bufnr)
 end
 
 require('lspconfig')['omnisharp_mono'].setup{
-  useGlobalMono = true,
   on_attach = on_attach,
 }
 
+
+--[[
 require('lspconfig')['omnisharp'].setup{
   on_attach = on_attach,
 }
+]]
